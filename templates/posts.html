@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+    <head>
+        <title> My Blog</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    
+    <body>
+        <div class="header">
+            <h1>Blog</h1>
+        </div>
+        <div class="post-list">
+            {% for post in posts%}
+            <div class="post">
+                <h1>{{post.title}}</h1>
+                <img src="{{post.image}}"  width="100%" height="400px">
+                <p>{{post.content}}</p>
+                <small>{{post.date}}</small>
+            </div>
+        {% endfor %}
+        </div>
+    </body>
+</html>
